@@ -1,41 +1,28 @@
-<!DOCTYPE html>
-<html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <title>Nytårs Jeopardy</title>
-    <style>
-        body { font-family: sans-serif; background-color: #000839; color: white; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 20px; }
-        .header { font-weight: bold; background-color: #0012c2; padding: 20px; border: 2px solid white; }
-        .cell { background-color: #060ce9; border: 2px solid white; padding: 40px 10px; font-size: 24px; cursor: pointer; }
-        .cell:hover { background-color: #3339ff; }
-        .cell.used { color: #0012c2; cursor: default; }
-    </style>
-</head>
-<body>
-    <h1>GODT NYTÅR JEOPARDY 2025</h1>
-    <div class="grid">
-        <div class="header">2024 Minder</div>
-        <div class="header">Nytårstraditioner</div>
-        <div class="header">Musik & Film</div>
-        <div class="header">Gæt en gæst</div>
-        <div class="header">Blandet</div>
+# 🥂 Nytårs Jeopardy 2025
 
-        <div class="cell" onclick="showQ('Hvem vandt EM i herrefodbold?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvad spiser man typisk kl. 24?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvilken film vandt en Oscar i år?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvem har fødselsdag i dag?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvor mange dage er der i et skudår?', this)">100</div>
-    </div>
+Dette er et interaktivt Jeopardy-spil bygget til nytårsaften. Spillet kører direkte i browseren og er hostet via GitHub Pages.
 
-    <script>
-        function showQ(question, element) {
-            if (!element.classList.contains('used')) {
-                alert(question);
-                element.classList.add('used');
-                element.innerText = ""; // Fjerner pointene efter spørgsmålet er stillet
-            }
-        }
-    </script>
-</body>
-</html>
+## 🚀 Sådan starter du spillet
+1. Gå til siden: [INDSÆT DIT GITHUB PAGES LINK HER]
+2. Åbn browseren på en computer, der er sluttet til en stor skærm/TV.
+3. Tryk på `F11` for at gå i fuldskærm.
+
+## 🎮 Spilleregler
+* **Vælg en kategori:** En gæst eller et hold vælger en kategori og et pointbeløb.
+* **Spørgsmålet:** Klik på feltet for at se spørgsmålet.
+* **Svar:** Den første der "buzzer" (f.eks. ved at række hånden op eller bruge en bord-klokke) får lov at svare.
+* **Point:** Hvis svaret er rigtigt, får de pointene. Hvis det er forkert, trækkes pointene fra (hvis I spiller med de hårde regler!).
+* **Brugte felter:** Når et spørgsmål har været vist, bliver feltet mørkt, så man ved, det er brugt.
+
+## 🛠 Teknisk info
+* **Sprog:** HTML5, CSS3 og JavaScript.
+* **Hosting:** GitHub Pages.
+* **Redigering:** For at ændre spørgsmålene skal du rette i `index.html` filen under de relevante `onclick` funktioner.
+
+## 📝 Huskeliste til værten
+- [ ] Hav en fysisk klokke eller buzzer klar.
+- [ ] Hav en blok papir og en kuglepen klar til at føre point (medmindre du opgraderer koden til at tælle point!).
+- [ ] Test lyden på computeren, hvis du har indlagt musik-spørgsmål.
+
+---
+Lavet med ❤️ til nytårsfesten 2025.
