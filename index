@@ -5,69 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nytårs Jeopardy 2025</title>
     <style>
-        /* Vi fjerner margin og padding for at gøre det helt rent */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background-color: #000428; color: white; text-align: center; margin: 0; padding: 20px; }
+        h1 { margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background-color: #000428; /* En anelse mørkere blå for dybde */
-            color: white; 
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid white;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
+        /* Gitteret til spillet */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(5, 1fr); 
-            gap: 15px; 
-            padding: 0 40px; 
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 10px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
         }
 
         .header { 
-            font-weight: bold; 
             background-color: #0012c2; 
-            padding: 20px 10px; 
-            border: 3px solid white;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80px;
+            padding: 15px 5px; 
+            border: 2px solid white; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center; min-height: 60px;
         }
 
         .cell { 
             background-color: #060ce9; 
-            border: 3px solid white; 
-            padding: 50px 10px; 
-            font-size: 32px; 
-            font-weight: bold;
+            border: 2px solid white; 
+            padding: 30px 0; 
+            font-size: 28px; 
+            font-weight: bold; 
             cursor: pointer; 
-            transition: transform 0.2s, background-color 0.2s;
+            transition: 0.2s;
         }
 
-        .cell:hover { 
-            background-color: #3339ff; 
-            transform: scale(1.05); /* Gør at knappen "puffer" lidt ud når man holder musen over */
-        }
+        .cell:hover { background-color: #3339ff; transform: scale(1.02); }
+        .cell.used { background-color: #000839; color: #0012c2; border-color: #0012c2; cursor: default; }
 
-        .cell.used { 
-            background-color: #000839; 
-            color: #0012c2; 
-            border-color: #0012c2;
-            cursor: default; 
-            transform: none;
+        /* Scoreboard i bunden */
+        .scoreboard { 
+            display: flex; 
+            justify-content: center; 
+            gap: 50px; 
+            margin-top: 40px; 
+            padding: 20px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 15px; 
+        }
+        .team { font-size: 20px; }
+        .score { font-size: 40px; display: block; margin: 10px 0; }
+        .btn { 
+            padding: 5px 15px; font-size: 20px; cursor: pointer; 
+            background: white; border: none; border-radius: 5px; margin: 0 5px;
         }
     </style>
 </head>
@@ -81,13 +67,43 @@
         <div class="header">Musik & Film</div>
         <div class="header">Gæt en gæst</div>
         <div class="header">Blandet</div>
+
+        <div class="cell" onclick="ask('Hvem blev konge af Danmark i januar 2024?', this)">100</div>
+        <div class="cell" onclick="ask('Hvad hopper man ned fra kl. 24:00?', this)">100</div>
+        <div class="cell" onclick="ask('Hvilken sang er den mest spillede til nytår?', this)">100</div>
+        <div class="cell" onclick="ask('Hvem i lokalet har den flotteste hat?', this)">100</div>
+        <div class="cell" onclick="ask('Hvor mange sekunder er der på et minut?', this)">100</div>
         
-        ```
+        </div>
 
-### Hvad jeg har ændret:
-1. **Fjernet "støjen":** Jeg har sikret, at `<!DOCTYPE html>` kun står øverst i filen, uden for selve indholdet.
-2. **Bedre spacing:** Tilføjet en `max-width` og centreret det hele, så det ikke strækker sig for langt ud på meget store skærme.
-3. **Hover-effekt:** Tilføjet en lille animation (`transform: scale`), så det føles mere som et rigtigt spil, når man bevæger musen over felterne.
-4. **Mørkere baggrund:** Gjort den blå farve lidt dybere for at give det et mere eksklusivt "nat-look".
+    <div class="scoreboard">
+        <div class="team">
+            Hold 1
+            <span id="score1" class="score">0</span>
+            <button class="btn" onclick="changeScore('score1', -100)">-</button>
+            <button class="btn" onclick="changeScore('score1', 100)">+</button>
+        </div>
+        <div class="team">
+            Hold 2
+            <span id="score2" class="score">0</span>
+            <button class="btn" onclick="changeScore('score2', -100)">-</button>
+            <button class="btn" onclick="changeScore('score2', 100)">+</button>
+        </div>
+    </div>
 
-**Vil du have hjælp til at lave en flot "Modal" (en boks der popper op midt på skærmen med spørgsmålet), i stedet for den grå standard-besked fra browseren?**
+    <script>
+        function ask(text, el) {
+            if (!el.classList.contains('used')) {
+                alert(text);
+                el.classList.add('used');
+                el.innerHTML = "&nbsp;"; 
+            }
+        }
+
+        function changeScore(id, amount) {
+            const el = document.getElementById(id);
+            el.innerText = parseInt(el.innerText) + amount;
+        }
+    </script>
+</body>
+</html>
