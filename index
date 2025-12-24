@@ -2,40 +2,92 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <title>Nytårs Jeopardy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nytårs Jeopardy 2025</title>
     <style>
-        body { font-family: sans-serif; background-color: #000839; color: white; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 20px; }
-        .header { font-weight: bold; background-color: #0012c2; padding: 20px; border: 2px solid white; }
-        .cell { background-color: #060ce9; border: 2px solid white; padding: 40px 10px; font-size: 24px; cursor: pointer; }
-        .cell:hover { background-color: #3339ff; }
-        .cell.used { color: #0012c2; cursor: default; }
+        /* Vi fjerner margin og padding for at gøre det helt rent */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: #000428; /* En anelse mørkere blå for dybde */
+            color: white; 
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 15px; 
+            padding: 0 40px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header { 
+            font-weight: bold; 
+            background-color: #0012c2; 
+            padding: 20px 10px; 
+            border: 3px solid white;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+        }
+
+        .cell { 
+            background-color: #060ce9; 
+            border: 3px solid white; 
+            padding: 50px 10px; 
+            font-size: 32px; 
+            font-weight: bold;
+            cursor: pointer; 
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cell:hover { 
+            background-color: #3339ff; 
+            transform: scale(1.05); /* Gør at knappen "puffer" lidt ud når man holder musen over */
+        }
+
+        .cell.used { 
+            background-color: #000839; 
+            color: #0012c2; 
+            border-color: #0012c2;
+            cursor: default; 
+            transform: none;
+        }
     </style>
 </head>
 <body>
+
     <h1>GODT NYTÅR JEOPARDY 2025</h1>
+
     <div class="grid">
         <div class="header">2024 Minder</div>
         <div class="header">Nytårstraditioner</div>
         <div class="header">Musik & Film</div>
         <div class="header">Gæt en gæst</div>
         <div class="header">Blandet</div>
+        
+        ```
 
-        <div class="cell" onclick="showQ('Hvem vandt EM i herrefodbold?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvad spiser man typisk kl. 24?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvilken film vandt en Oscar i år?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvem har fødselsdag i dag?', this)">100</div>
-        <div class="cell" onclick="showQ('Hvor mange dage er der i et skudår?', this)">100</div>
-    </div>
+### Hvad jeg har ændret:
+1. **Fjernet "støjen":** Jeg har sikret, at `<!DOCTYPE html>` kun står øverst i filen, uden for selve indholdet.
+2. **Bedre spacing:** Tilføjet en `max-width` og centreret det hele, så det ikke strækker sig for langt ud på meget store skærme.
+3. **Hover-effekt:** Tilføjet en lille animation (`transform: scale`), så det føles mere som et rigtigt spil, når man bevæger musen over felterne.
+4. **Mørkere baggrund:** Gjort den blå farve lidt dybere for at give det et mere eksklusivt "nat-look".
 
-    <script>
-        function showQ(question, element) {
-            if (!element.classList.contains('used')) {
-                alert(question);
-                element.classList.add('used');
-                element.innerText = ""; // Fjerner pointene efter spørgsmålet er stillet
-            }
-        }
-    </script>
-</body>
-</html>
+**Vil du have hjælp til at lave en flot "Modal" (en boks der popper op midt på skærmen med spørgsmålet), i stedet for den grå standard-besked fra browseren?**
