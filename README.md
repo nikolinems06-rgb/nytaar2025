@@ -1,28 +1,28 @@
 # 🥂 Nytårs Jeopardy 2025
 
-Dette er et interaktivt Jeopardy-spil bygget til nytårsaften. Spillet kører direkte i browseren og er hostet via GitHub Pages.
+Dette er et interaktivt Jeopardy-spil skræddersyet til nytårsaften. Spillet indeholder kategorier om året der gik, traditioner og gæsterne.
 
-## 🚀 Sådan starter du spillet
-1. Gå til siden: [INDSÆT DIT GITHUB PAGES LINK HER]
-2. Åbn browseren på en computer, der er sluttet til en stor skærm/TV.
-3. Tryk på `F11` for at gå i fuldskærm.
+## 🚀 Direkte link til spillet
+Klik her for at starte:  
+👉 **[https://nikolinems06-rgb.github.io/nytaar2025/](https://nikolinems06-rgb.github.io/nytaar2025/)**
 
-## 🎮 Spilleregler
-* **Vælg en kategori:** En gæst eller et hold vælger en kategori og et pointbeløb.
-* **Spørgsmålet:** Klik på feltet for at se spørgsmålet.
-* **Svar:** Den første der "buzzer" (f.eks. ved at række hånden op eller bruge en bord-klokke) får lov at svare.
-* **Point:** Hvis svaret er rigtigt, får de pointene. Hvis det er forkert, trækkes pointene fra (hvis I spiller med de hårde regler!).
-* **Brugte felter:** Når et spørgsmål har været vist, bliver feltet mørkt, så man ved, det er brugt.
+## 🎮 Sådan styrer du spillet
+1. **Fuldskærm:** Tryk på `F11` (Windows) eller `Cmd + Ctrl + F` (Mac) for at fjerne browser-menuerne.
+2. **Vælg spørgsmål:** Klik på et point-felt (f.eks. 100). Et vindue popper op med spørgsmålet.
+3. **Point:** Brug **+** og **-** knapperne i bunden af skærmen under det relevante hold for at styre scoren løbende.
+4. **Brugte felter:** Når et felt er valgt, bliver det mørkt og kan ikke trykkes på igen.
 
-## 🛠 Teknisk info
-* **Sprog:** HTML5, CSS3 og JavaScript.
-* **Hosting:** GitHub Pages.
-* **Redigering:** For at ændre spørgsmålene skal du rette i `index.html` filen under de relevante `onclick` funktioner.
+## 🛠 Opdatering af indhold
+Hvis du vil ændre spørgsmålene eller tilføje flere rækker (200, 300 osv.):
+1. Åbn `index.html`.
+2. Find linjerne med `ask('Spørgsmål her', this)`.
+3. Ret teksten indeni de små anførselstegn.
+4. Gem (Commit) dine ændringer. Der går ca. 1 minut før linket er opdateret.
 
-## 📝 Huskeliste til værten
-- [ ] Hav en fysisk klokke eller buzzer klar.
-- [ ] Hav en blok papir og en kuglepen klar til at føre point (medmindre du opgraderer koden til at tælle point!).
-- [ ] Test lyden på computeren, hvis du har indlagt musik-spørgsmål.
+## 📝 Huskeliste til nytårsaften
+- [ ] Forbind computeren til TV via HDMI eller AirPlay.
+- [ ] Hav en fysisk "buzzer" klar (en klokke, en squeaky toy eller bare hurtigste hånd).
+- [ ] Test at lyden virker, hvis du har spørgsmål der kræver musik.
 
 ---
-Lavet med ❤️ til nytårsfesten 2025.
+*God fest og godt nytår! 🎆*
