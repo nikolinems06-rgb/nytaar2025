@@ -1,19 +1,133 @@
-<div class="grid">
-    <div class="header">2024 Minder</div>
-    <div class="header">Nytårstraditioner</div>
-    <div class="header">Musik & Film</div>
-    <div class="header">Gæt en gæst</div>
-    <div class="header">Blandet</div>
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nytårs Jeopardy 2025</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #000428; color: white; text-align: center; margin: 0; padding: 20px; }
+        h1 { margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 2.5rem; }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 10px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
 
-    <div class="cell" onclick="ask('Spørgsmål 1', this)">100</div>
-    <div class="cell" onclick="ask('Spørgsmål 2', this)">100</div>
-    <div class="cell" onclick="ask('Spørgsmål 3', this)">100</div>
-    <div class="cell" onclick="ask('Spørgsmål 4', this)">100</div>
-    <div class="cell" onclick="ask('Spørgsmål 5', this)">100</div>
+        .header { 
+            background-color: #0012c2; 
+            padding: 15px 5px; 
+            border: 2px solid white; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center; min-height: 60px;
+            text-transform: uppercase;
+        }
 
-    <div class="cell" onclick="ask('Et sværere spørgsmål 1', this)">200</div>
-    <div class="cell" onclick="ask('Et sværere spørgsmål 2', this)">200</div>
-    <div class="cell" onclick="ask('Et sværere spørgsmål 3', this)">200</div>
-    <div class="cell" onclick="ask('Et sværere spørgsmål 4', this)">200</div>
-    <div class="cell" onclick="ask('Et sværere spørgsmål 5', this)">200</div>
-</div>
+        .cell { 
+            background-color: #060ce9; 
+            border: 2px solid white; 
+            padding: 25px 0; 
+            font-size: 32px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: 0.2s;
+        }
+
+        .cell:hover { background-color: #3339ff; transform: scale(1.02); }
+        .cell.used { background-color: #000839; color: #0012c2; border-color: #0012c2; cursor: default; }
+
+        .scoreboard { 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+            margin-top: 30px; 
+            padding: 15px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 15px; 
+        }
+        .team { font-size: 18px; font-weight: bold; }
+        .score { font-size: 35px; display: block; margin: 5px 0; color: #ffd700; }
+        .btn { 
+            padding: 5px 12px; font-size: 18px; cursor: pointer; 
+            background: white; border: none; border-radius: 5px; margin: 0 2px;
+            font-weight: bold;
+        }
+        .btn-minus { background-color: #ff4d4d; color: white; }
+        .btn-plus { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>GODT NYTÅR JEOPARDY 2025</h1>
+
+    <div class="grid">
+        <div class="header">2024 Minder</div>
+        <div class="header">Nytårstraditioner</div>
+        <div class="header">Musik & Film</div>
+        <div class="header">Gæt en gæst</div>
+        <div class="header">Blandet</div>
+
+        <div class="cell" onclick="ask('Spørgsmål 2024 - 100', this)">100</div>
+        <div class="cell" onclick="ask('Spørgsmål Traditioner - 100', this)">100</div>
+        <div class="cell" onclick="ask('Spørgsmål Musik - 100', this)">100</div>
+        <div class="cell" onclick="ask('Spørgsmål Gæst - 100', this)">100</div>
+        <div class="cell" onclick="ask('Spørgsmål Blandet - 100', this)">100</div>
+
+        <div class="cell" onclick="ask('Spørgsmål 2024 - 200', this)">200</div>
+        <div class="cell" onclick="ask('Spørgsmål Traditioner - 200', this)">200</div>
+        <div class="cell" onclick="ask('Spørgsmål Musik - 200', this)">200</div>
+        <div class="cell" onclick="ask('Spørgsmål Gæst - 200', this)">200</div>
+        <div class="cell" onclick="ask('Spørgsmål Blandet - 200', this)">200</div>
+
+        <div class="cell" onclick="ask('Spørgsmål 2024 - 300', this)">300</div>
+        <div class="cell" onclick="ask('Spørgsmål Traditioner - 300', this)">300</div>
+        <div class="cell" onclick="ask('Spørgsmål Musik - 300', this)">300</div>
+        <div class="cell" onclick="ask('Spørgsmål Gæst - 300', this)">300</div>
+        <div class="cell" onclick="ask('Spørgsmål Blandet - 300', this)">300</div>
+
+        <div class="cell" onclick="ask('Spørgsmål 2024 - 400', this)">400</div>
+        <div class="cell" onclick="ask('Spørgsmål Traditioner - 400', this)">400</div>
+        <div class="cell" onclick="ask('Spørgsmål Musik - 400', this)">400</div>
+        <div class="cell" onclick="ask('Spørgsmål Gæst - 400', this)">400</div>
+        <div class="cell" onclick="ask('Spørgsmål Blandet - 400', this)">400</div>
+
+        <div class="cell" onclick="ask('Spørgsmål 2024 - 500', this)">500</div>
+        <div class="cell" onclick="ask('Spørgsmål Traditioner - 500', this)">500</div>
+        <div class="cell" onclick="ask('Spørgsmål Musik - 500', this)">500</div>
+        <div class="cell" onclick="ask('Spørgsmål Gæst - 500', this)">500</div>
+        <div class="cell" onclick="ask('Spørgsmål Blandet - 500', this)">500</div>
+    </div>
+
+    <div class="scoreboard">
+        <div class="team">HOLD 1 <span id="score1" class="score">0</span>
+            <button class="btn btn-minus" onclick="changeScore('score1', -100)">-</button>
+            <button class="btn btn-plus" onclick="changeScore('score1', 100)">+</button>
+        </div>
+        <div class="team">HOLD 2 <span id="score2" class="score">0</span>
+            <button class="btn btn-minus" onclick="changeScore('score2', -100)">-</button>
+            <button class="btn btn-plus" onclick="changeScore('score2', 100)">+</button>
+        </div>
+        <div class="team">HOLD 3 <span id="score3" class="score">0</span>
+            <button class="btn btn-minus" onclick="changeScore('score3', -100)">-</button>
+            <button class="btn btn-plus" onclick="changeScore('score3', 100)">+</button>
+        </div>
+    </div>
+
+    <script>
+        function ask(text, el) {
+            if (!el.classList.contains('used')) {
+                alert(text);
+                el.classList.add('used');
+                el.innerHTML = "&nbsp;"; 
+            }
+        }
+        function changeScore(id, amount) {
+            const el = document.getElementById(id);
+            el.innerText = parseInt(el.innerText) + amount;
+        }
+    </script>
+</body>
+</html>
